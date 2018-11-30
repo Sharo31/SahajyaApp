@@ -6,9 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".Online_medical">
 
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ques_bullet"
+                    android:background="#ffffff"
+                    android:id="@+id/q1_bullet"/>
+
+
+            <TextView
+                android:id="@+id/qus1"
+                android:textSize="20sp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="what to do during minor cut?"
+                android:textColor="#000000"></TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ans1"
+                android:visibility="gone"
+                android:text="Jo mann mei aaye"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+
+
+
+
+
 
     <!--
     <ImageButton
@@ -22,19 +83,25 @@
         android:background="#ffffff"
         android:src="@drawable/messaging" />
     -->
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/chat_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        android:fitsSystemWindows="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:clickable="true"
 
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="34dp"
+        android:clickable="true"
+        android:fitsSystemWindows="true"
         app:backgroundTint="#ffffff"
         app:srcCompat="@drawable/messaging" />
+
+
 
 
 </RelativeLayout>
