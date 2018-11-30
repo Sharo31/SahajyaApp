@@ -34,6 +34,8 @@ import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class emergency_help extends AppCompatActivity {
 
     // Constants for the notification actions buttons.

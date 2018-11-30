@@ -264,8 +264,11 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 final Map<String, String> emergency_help = new HashMap<>();
                 emergency_help.put("Latitude",getLatitude());
                 emergency_help.put("Longitude",getLongitude());
-                emergency_help.put("SOS","I am stuck here .. Please send help");
-                firebaseFirestore.collection("DistressLocation").add(emergency_help).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                emergency_help.put("Airlift", "yes");
+                emergency_help.put("Ward","Arakereabc");
+                emergency_help.put("Contact","");
+                emergency_help.put("Emergency","I am stuck here .. Please send help");
+                firebaseFirestore.collection("Emergency Help").add(emergency_help).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
 
