@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".volunteers_signup">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/welfare"/>
+
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volunteer's Sign Up Portal"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        -->
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="  Name"
+            android:drawableLeft="@drawable/ic_name"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nameId"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="  Age"
+            android:drawableLeft="@drawable/ic_age"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            android:id="@+id/age"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_gender"
+            app:met_floatingLabel="highlight"
+            android:inputType="text"
+            android:hint="  Gender"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gender"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="  Email"
+            android:drawableLeft="@drawable/ic_email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:id="@+id/email"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_contact"
+            app:met_floatingLabel="highlight"
+            android:hint="  Contact Details"
+            android:inputType="phone"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mobile"/>
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+
+            android:id="@+id/choice_camp"
+            android:layout_width="250dp"
+            android:drawableLeft="@drawable/ic_camp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:hint="  Please select a camp" />
+
+
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:id="@+id/submit" />
+
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoundPersonData">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Found Persons"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="Name"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            android:id="@+id/editTextname"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="Age"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            android:id="@+id/editTextage"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="10dp"
+            android:id="@+id/editTextdesc"/>
+
+        <TextView
+            android:id="@+id/textviewphoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Upload Photo"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <ImageView
+            android:id="@+id/imageViewupload"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:tint="@color/colorOrange"
+            app:srcCompat="@drawable/ic_photo_camera_white_24dp" />
+
+        <Button
+            android:id="@+id/buttonsubmitlost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Submit" />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

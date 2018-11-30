@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".emergency_help">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+            <!--
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Help Portal"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            -->
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/helping_hand"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactid"
+                android:layout_marginTop="10dp"
+                app:met_floatingLabel="highlight"
+                android:hint="  Contact Number"
+                android:drawableLeft="@drawable/ic_emergency_contact"/>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/emergency_context"
+                android:layout_marginTop="10dp"
+                app:met_floatingLabel="highlight"
+                android:drawableLeft="@drawable/ic_emergency_situation"
+                android:hint="  Describe the situation"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+
+                android:id="@+id/choice_location"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_emergency_location"
+                android:hint="  Please select a ward" />
+            <TextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Would you like yourself to be airlifted?"/>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:padding="16dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:id="@+id/yesid"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:checked="false"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:id="@+id/noid"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:checked="false"
+                    android:layout_marginLeft="15dp"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="(select yes only in extreme emergency)"/>
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_marginTop="10dp"
+                android:id="@+id/submit_emergency"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>
