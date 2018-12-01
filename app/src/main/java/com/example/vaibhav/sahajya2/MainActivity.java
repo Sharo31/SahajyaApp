@@ -52,6 +52,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
 
     TextToSpeech textToSpeech;
     SensorManager sensorManager;
+   // TextView marq;
     ViewFlipper v_flipper;
 
 
@@ -106,12 +107,14 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
     ImageButton missing_people_btn;
     ImageButton relief_camp_btn;
     ImageButton volunteer_signup_btn;
+    ImageButton ack_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+       // marq = (TextView)findViewById(R.id.maruquee_text);
+        //marq.setSelected(true);
         //oncreate method of get location
 
         permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -134,7 +137,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
 
         //locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         firebaseFirestore = FirebaseFirestore.getInstance();
-
+        ack_btn = (ImageButton)findViewById(R.id.ack);
         online_medical_btn = (ImageButton)findViewById(R.id.online_medical);
         emergency_help_btn = (ImageButton)findViewById(R.id.emergency_help);
         missing_people_btn = (ImageButton)findViewById(R.id.missing_people);
@@ -187,6 +190,16 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
                 startActivity(intent);
             }
         });
+        ack_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Acknowledgment_form.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+
 
         /*
 
