@@ -7,10 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Online_medical extends AppCompatActivity {
+
+    Button get_loc;
 
     ImageButton chat_bttn;
     TextView q1;
@@ -27,6 +30,19 @@ public class Online_medical extends AppCompatActivity {
         getSupportActionBar().setTitle("Online Medical Assist");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        //gettin users location
+       /* get_loc= (Button)findViewById(R.id.get_location);
+        get_loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Online_medical.this,GetLocation.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        */
         chat_bttn = (ImageButton)findViewById(R.id.chat_btn);
 
         chat_bttn.setOnClickListener(new View.OnClickListener() {

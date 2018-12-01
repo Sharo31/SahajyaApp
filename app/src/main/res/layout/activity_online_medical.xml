@@ -7,9 +7,20 @@
     tools:context=".Online_medical">
 
 
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
+
+    <!--
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get location"
+        android:id="@+id/get_location"
+        android:layout_below="@+id/toolbar"/>
+
+        -->
 
     <ScrollView
         android:layout_width="wrap_content"
