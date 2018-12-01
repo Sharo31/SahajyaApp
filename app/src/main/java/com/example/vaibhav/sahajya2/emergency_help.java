@@ -111,7 +111,7 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
 
 
 
-    String[] SPINNERLISTEH = {"A Narayanapura","Adugodi","Agara","Agrahara Dasarahalli","Anjanapura","Arakere","Arakere","B T M Layout","Bagalakunte","Banasavadi","Banashankari Temple","Basavanagudi","Basavanapura","Chickpete","Cv Raman Nagar","Dayananda Nagar","Devasandra","Gandhinagar","Gandhinagar","Gottigere","Hal Airport","Halsoor","Hbr Layout","Hebbal","Hmt","Hosahalli","Hosakerehalli","Hsr Layout","J P Nagar","Jakkasandra","Jalahalli","Jayanagara","JP Park","K R Market","K R Pura","Kammanahalli","Koramangala","Kuvempu Nagar","Malleswaram","Marattahalli","Mattikere","Nagapura","Nagavara","Peenya Industrial Area","Radhakrishna Temple","Rajajinagar","Rajarajeshwari Nagar","Sanjay Nagar","Shakambari Nagar","Shanthi Nagar","Shivaji Nagar","Srinagara","Sunkenahalli","Vasanth Nagar","Vasanthpura","Vijayanagara","Vishveshwara Puram","Vrisabhavathi Nagar","Yelchenahalli","Yeshwanthpura"};
+    String[] SPINNERLISTEH = {"MGRoad","Jalahalli","Yehlanka","Jayanagar","Yeshwanthpura"};
 
     private FirebaseFirestore firebaseFirestore;
     int flag = 0;
