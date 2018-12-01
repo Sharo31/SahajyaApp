@@ -12,62 +12,367 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <!--
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get location"
-        android:id="@+id/get_location"
-        android:layout_below="@+id/toolbar"/>
 
-        -->
 
-    <ScrollView
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="20dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:gravity="center_horizontal"
+                android:text="Frequently Asked Questions"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:fontFamily="monospace" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ques_bullet"
-                    android:background="#ffffff"
-                    android:id="@+id/q1_bullet"/>
-
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_ques_bullet"
+                android:id="@+id/q1_bullet"
+                android:background="#ffffff"
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/qus1"
-                android:textSize="20sp"
-
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="what to do during minor cut?"
-                android:textColor="#000000"></TextView>
+                android:layout_marginLeft="25dp"
+                android:id="@+id/qus1"
+                android:text="General guidelines"
+                android:textSize="21sp"/>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="  Consume only safe drinking water and avoid wading through flood waters "
+                    android:id="@+id/ans1"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ans1"
-                android:visibility="gone"
-                android:text="Jo mann mei aaye"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q2_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus2"
+                        android:text="what to do during minor cut?"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="  Rinse and clean the wound with water and apply anitibiotic"
+                    android:id="@+id/ans2"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
 
 
 
-        </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <!-- third question -->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q3_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus3"
+                        android:text="Minor Burns"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="Cool the burn with water and cover it up"
+                    android:id="@+id/ans3"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <!--fourth question-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q4_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus4"
+                        android:text="Avoiding over hydration"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="Reduce water intake and be active"
+                    android:id="@+id/ans4"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <!--fifth question-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q5_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus5"
+                        android:text="Avoid dehydration"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="  Drink more fluids and suck on ice chips"
+                    android:id="@+id/ans5"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q6_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus6"
+                        android:text="Severe vomiting"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="  Avoid greasy food and be physically inactive afetr eating"
+                    android:id="@+id/ans6"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_ques_bullet"
+                        android:background="#ffffff"
+                        android:id="@+id/q7_bullet"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/qus7"
+                        android:text="what to do during headache?"
+                        android:textSize="21sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="Warm up ur neck by putting heat pads"
+                    android:id="@+id/ans7"
+                    android:drawableLeft="@drawable/ic_downarrow"
+                    android:layout_marginLeft="12dp"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 
 
 
@@ -75,25 +380,6 @@
 
 
 
-    </ScrollView>
-
-
-
-
-
-
-    <!--
-    <ImageButton
-        android:id="@+id/chat_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="20dp"
-        android:background="#ffffff"
-        android:src="@drawable/messaging" />
-    -->
 
 
     <android.support.design.widget.FloatingActionButton
