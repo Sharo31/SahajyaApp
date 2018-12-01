@@ -417,6 +417,8 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
     @Override
     public void onInit(int status) {
 
+        int count =1;
+
         if (status == TextToSpeech.SUCCESS) {
 
             int result =textToSpeech.setLanguage(Locale.US);
@@ -425,7 +427,14 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
                     || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported");
             } else {
-                textToSpeech.speak("Welcome to Sahajya app",TextToSpeech.QUEUE_FLUSH,null);
+                if (count == 1) {
+                    textToSpeech.speak("Welcome to Sahajya app", TextToSpeech.QUEUE_FLUSH, null);
+                    count +=1;
+                }
+                else
+                {
+                    onDestroy();
+                }
             }
 
         } else {
