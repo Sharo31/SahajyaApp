@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    //android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -51,11 +51,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MissingReport"
+        <activity
+            android:name=".MissingReport"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_missing_report"
-            android:theme="@style/FullscreenTheme"/>
-        <activity android:name=".FoundPersonData"></activity>
+            android:theme="@style/FullscreenTheme"
+            android:parentActivityName=".Missing_people"/>
+        <activity android:name=".FoundPersonData"
+            android:parentActivityName=".Missing_people"/>
+        <activity android:name=".GetLocation" />
     </application>
 
 </manifest>

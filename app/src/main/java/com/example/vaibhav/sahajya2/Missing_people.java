@@ -20,7 +20,7 @@ public class Missing_people extends AppCompatActivity {
     private String n;
     private String a;
     private String d;
-    private FloatingActionButton floatingActionButton;
+    private FloatingActionButton fb;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -57,15 +57,15 @@ public class Missing_people extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-        floatingActionButton=(FloatingActionButton)findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        fb=(FloatingActionButton)findViewById(R.id.fabi);
+        fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Log.d("sahajya","add missing report");
                 if(tabLayout.getSelectedTabPosition()==0) {
                     Log.d("vaibhav", "reached tab1");
-                    startActivity(new Intent(getApplicationContext(), MissingReport.class));
+                    startActivity(new Intent(Missing_people.this, MissingReport.class));
                 }
                 if(tabLayout.getSelectedTabPosition()==1) {
                     Log.d("sadanand","reached tab2");

@@ -137,7 +137,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
 
         //locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         firebaseFirestore = FirebaseFirestore.getInstance();
-        ack_btn = (ImageButton)findViewById(R.id.ack);
+        //ack_btn = (ImageButton)findViewById(R.id.ack);
         online_medical_btn = (ImageButton)findViewById(R.id.online_medical);
         emergency_help_btn = (ImageButton)findViewById(R.id.emergency_help);
         missing_people_btn = (ImageButton)findViewById(R.id.missing_people);
@@ -190,14 +190,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
                 startActivity(intent);
             }
         });
-        ack_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Acknowledgment_form.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
 
 
 
@@ -427,6 +420,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
     public void onUtteranceCompleted(String utteranceId) {
 
     }
+
     @Override
     public void onInit(int status) {
 
@@ -442,7 +436,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
             } else {
                 if (count == 1) {
                     textToSpeech.speak("Welcome to Sahajya app", TextToSpeech.QUEUE_FLUSH, null);
-                    count +=1;
+                    count = 2;
                 }
                 else
                 {

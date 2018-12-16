@@ -3,6 +3,7 @@ package com.example.vaibhav.sahajya2;
 import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,6 +11,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,6 +28,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import java.util.ArrayList;
@@ -57,6 +63,10 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
    public Double longitude;
    private Location location;
     private TextView locationTv;
+    private ImageButton imgpick;
+    private StorageReference firebaseStorage;
+    private ProgressDialog progressDialog;
+    private static final int GALLERY_INTENT = 2;
     private GoogleApiClient googleApiClient;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private LocationRequest locationRequest;
@@ -111,7 +121,7 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
 
 
 
-    String[] SPINNERLISTEH = {"MGRoad","Jalahalli","Yehlanka","Jayanagar","Yeshwanthpura"};
+    String[] SPINNERLISTEH = {"MGRoad","Jalahalli","Yehlanka","Arakere","Yeshwanthpura"};
 
     private FirebaseFirestore firebaseFirestore;
     int flag = 0;
@@ -228,11 +238,16 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
         emergency_text = (EditText) findViewById(R.id.emergency_context);
         yes_box = (CheckBox) findViewById(R.id.yesid);
         no_box = (CheckBox) findViewById(R.id.noid);
+        imgpick =(ImageButton)findViewById(R.id.image_pick);
+        firebaseStorage = FirebaseStorage.getInstance().getReference();
         submit_emergency = (Button) findViewById(R.id.submit_emergency);
+
+        progressDialog = new ProgressDialog(this);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, SPINNERLISTEH);
         final MaterialBetterSpinner betterSpinner = (MaterialBetterSpinner) findViewById(R.id.choice_location);
         betterSpinner.setAdapter(arrayAdapter);
+
 
         createNotificationChannel();
         yes_box.setOnClickListener(new View.OnClickListener() {
@@ -277,6 +292,36 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
 
 
         });
+
+        imgpick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent,GALLERY_INTENT);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode== GALLERY_INTENT && resultCode == RESULT_OK)
+        {
+            progressDialog.setMessage("Uploading location image ....");
+            progressDialog.show();
+            Uri uri = data.getData();
+            StorageReference filepath = firebaseStorage.child("Photos").child(uri.getLastPathSegment());
+            filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(emergency_help.this,"Location Image uploaded",Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
+            });
+        }
     }
 
     //get location after oncreate is completed
@@ -491,7 +536,7 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
             public void onSuccess(DocumentReference documentReference) {
 
                 Toast.makeText(emergency_help.this, "Your response has been submitted", Toast.LENGTH_SHORT).show();
-                finish();
+                
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }
@@ -499,7 +544,7 @@ public class emergency_help extends AppCompatActivity implements GoogleApiClient
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(emergency_help.this, "Error adding your details to database", Toast.LENGTH_SHORT).show();
-                finish();
+
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });

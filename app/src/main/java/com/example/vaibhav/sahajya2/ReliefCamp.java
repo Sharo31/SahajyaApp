@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
@@ -106,6 +107,33 @@ public class ReliefCamp extends FragmentActivity implements
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(def,zoomLevel));
 
 
+        LatLng drop1 = new LatLng(12.970883, 77.577747);
+        mMap.addMarker(new MarkerOptions().position((drop1))
+                .title("Relief Drop1"))
+                .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.yellow_marker));
+        mMap.setMapType(mMap.MAP_TYPE_TERRAIN);
+        //mMap.setMaxZoomPreference(20.0f);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(def,zoomLevel));
+
+        LatLng drop2 = new LatLng(12.912381, 77.585489);
+        mMap.addMarker(new MarkerOptions().position((drop2))
+                .title("Relief Drop1"))
+                .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.yellow_marker));
+        mMap.setMapType(mMap.MAP_TYPE_TERRAIN);
+        //mMap.setMaxZoomPreference(20.0f);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(def,zoomLevel));
+
+        LatLng drop3 = new LatLng(13.131512, 77.602427);
+        mMap.addMarker(new MarkerOptions().position((drop3))
+                .title("Relief Drop1"))
+                .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.yellow_marker));
+        mMap.setMapType(mMap.MAP_TYPE_TERRAIN);
+        //mMap.setMaxZoomPreference(20.0f);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(def,zoomLevel));
+
+
+
+
 
 
 
@@ -130,5 +158,6 @@ public class ReliefCamp extends FragmentActivity implements
     public void onPolylineClick(Polyline polyline) {
 
     }
+
 }
 
