@@ -420,11 +420,11 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
     public void onUtteranceCompleted(String utteranceId) {
 
     }
-
+    static int count =0;
     @Override
     public void onInit(int status) {
 
-        int count =1;
+        count =1;
 
         if (status == TextToSpeech.SUCCESS) {
 
@@ -475,7 +475,7 @@ GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener, 
             notificationManager.createNotificationChannel(notificationChannel);
         }
     }*/
-    int count =0;
+
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
         @Override
